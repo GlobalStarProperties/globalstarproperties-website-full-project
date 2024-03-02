@@ -18,9 +18,7 @@ const App = () => {
     products.map((item) => {
       const whatsAppLink = purpose == 'product' ?
       `https://wa.me/+2348168096890?text=Hi, I'm interested in the property called ${item.title} located at ${item.location} with the price tag ${item.price}. https://globalstarproperties.netlify.app/product/${item.id}`
-      :
-      `https://wa.me/+2348168096890?text=Hi, I saw your property listing for property in Johannesburg, South Africa from your website. I'm interested in learning more about it. Could you please tell me more about it ?.
-      Thank you for your time`;
+      : `https://wa.me/+2348168096890?text=Hi, I saw your property listing for property in Johannesburg, South Africa from your website. I'm interested in learning more about it. Could you please tell me more about it ?. Thank you for your time`;
       window.open(whatsAppLink, "_blank");
     })
   };
