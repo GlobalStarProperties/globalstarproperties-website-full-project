@@ -1,0 +1,235 @@
+@use '../../settings.global.scss' as baseStyle;
+
+$color: baseStyle.$primaryColor;
+$bgColor: baseStyle.$accentColor;
+$elementBgColor: baseStyle.$secondaryColor;
+
+.product-details-container {
+    margin: 0 auto;
+    width: 100%;
+    color: $color;
+
+    hr {
+        width: 100%;
+    }
+
+    .product-details {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: row nowrap;
+        align-items: stretch;
+        padding: 30px 80px 50px;
+        border-bottom: 2px solid $color;
+
+        .product-slideshow {
+            max-width: 40%;
+            height: 350px;
+            flex: 40%;
+            margin-right: 15px;
+            border: 1px solid $color;
+            border-radius: 10px;
+            position: relative;
+
+            .current-Image {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px ;
+                    transition: 0.5s ease;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+
+            }
+            .prev {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                color: rgba($color: #ffffff, $alpha: 1);
+                font-size: 40px;
+                cursor: pointer;
+            }
+            .next {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                color: rgba($color: #ffffff, $alpha: 1);
+                font-size: 40px;
+                cursor: pointer;
+            }
+             .other-Image {
+                position: absolute;
+                bottom: 0;
+                padding: 10px 15px;
+                width: 100%;
+                overflow-y: none;
+                overflow-x: auto;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: rgba($color: #000000, $alpha: 1.0);
+                opacity: 0.8;
+                border-radius: 0 0 10px 10px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #ffffff;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+             }
+        }
+
+        .product-info {
+            padding: 0 30px 30px;
+            flex: 40%;
+            margin: 0 15px;
+            color: $color;
+
+            h2 {
+                font-size: 22px;
+                font-weight: lighter;
+                margin-bottom: 15px;
+                line-height: 27px;
+            }
+             .price {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+             }
+             .location {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                margin-bottom: 50px;
+
+                .icon {
+                    margin: 4px 3px 0;
+                }
+             }
+             .buttonContainer {
+                margin: 0;
+                padding: 0;
+
+                button {
+                    background-color: $color;
+                    color: $bgColor;
+                    border-color: $bgColor;
+
+                    &:hover {
+                        background-color: $bgColor;
+                        color: $color;
+                        border-color: $color;
+                    }
+                }
+             }
+        }
+    }
+
+    .product-description {
+        margin: 0;
+        width: 100%;
+        padding: 30px 30px;
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                // transform: ;
+                margin: 10px 5px 0;
+                // transform: rotateX(0deg);
+                transition: 0.5s ease;
+            }
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 27px;
+            overflow: hidden;
+            height: 160px;
+            transition: 0.5s ease;
+        }
+    }
+
+    @include baseStyle.for-size(mobile) {
+        .product-details {
+            display: block;
+            margin: 0px;
+            padding: 30px 25px 40px;
+
+            .product-slideshow {
+                max-width: 100%;
+                margin: 0 0 30px;
+            }
+
+            .product-info {
+                padding: 0;
+
+                h2 {
+                    font-size: 25px;
+                    font-weight: lighter;
+                } 
+                .price {
+                    font-size: 23px;
+                }
+                .location{
+                    font-size: 18px;
+                }
+                button {
+                    padding: 15px 30px;
+                    font-size: 22px;
+                }
+            }
+
+            .product-info {
+                flex: 100%;
+            }
+        }
+    }
+
+    @include baseStyle.for-size(tablet) {
+        .product-details {
+            display: block;
+            margin: 0px;
+            padding: 30px 25px 40px;
+
+            .product-slideshow {
+                max-width: 40%;
+                height: 350px;
+                margin: 0 auto 30px;
+            }
+
+            .product-info {
+                padding: 0;
+
+                h2 {
+                    font-size: 26px;
+                    font-weight: lighter;
+                    line-height: 35px;
+                } 
+                .price {
+                    font-size: 24px;
+                }
+                .location{
+                    font-size: 22px;
+                    transform: translateX(-12px);
+                }
+                button {
+                    padding: 15px 30px;
+                    font-size: 22px;
+                }
+            }
+
+            .product-info {
+                flex: 100%;
+            }
+        }
+    }
+}

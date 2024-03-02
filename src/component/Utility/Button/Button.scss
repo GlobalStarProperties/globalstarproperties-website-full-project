@@ -1,0 +1,42 @@
+@use "../../../settings.global.scss" as baseStyle;
+
+// $bgColor: baseStyle.$primaryColor;
+$color: baseStyle.$primaryColor;
+$elementBgColor: baseStyle.$accentColor;
+$fontFamily: baseStyle.$fontFamily;
+
+.buttonContainer {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+
+    button {
+        outline: none;
+        border: 1px solid $color;
+        padding: 10px 20px;
+        color: $color;
+        background-color: $elementBgColor;
+        font-family: $fontFamily;
+        font-size: 17px;
+        border-radius: 10px;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+
+    button:hover {
+        transform: translateY(-5px);
+        background-color: $color;
+        color: $elementBgColor;
+        border-color: $elementBgColor;
+
+    }
+    button .btnContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+            margin: 5px 5px 0 0;
+        }
+    }
+}

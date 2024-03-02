@@ -1,0 +1,157 @@
+@use "../../../settings.global.scss" as baseStyle;
+
+$bgColor: baseStyle.$primaryColor;
+$color: baseStyle.$accentColor;
+$elementBgColor: baseStyle.$secondaryColor;
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 10px 40px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bgColor;
+    color: $color;
+    z-index: 5;
+    box-shadow: 0px 0px 5px 5px rgba($color: #fff, $alpha: 0.5);
+
+    @include baseStyle.for-size(mobile) {
+        padding: 20px 50px;
+    }
+    @include baseStyle.for-size(tablet) {
+        padding: 30px 60px;
+
+        .logoImg > .logo {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+     .header-Btn > .buttonContainer {
+        border-left: 1px solid #808080;
+    }
+
+    .logoImg {
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            transform: translateY(-5px);
+        }
+    }
+
+    .navContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sidebar-Menu-Container{
+        .menu-Btn {
+            font-size: 35px;
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            padding: 10px 10px 5px ;
+            cursor: pointer;
+            transition: 0.5s ease-in;
+        }
+        .sidebar-Menu {
+            width: 350px;
+            height: 100vh;
+            padding: 30px 0;
+            position: fixed;
+            right: -700px;
+            top: 0;
+            background-color: $bgColor;
+            transition: 0.5s ease-out;
+
+            .menu {
+                ul {
+                    display: block;
+                    list-style: none;
+                    margin: 0;
+                    padding-top: 20px;
+    
+                    li a {
+                        display: block;
+                        padding: 15px 30px;
+                        transition: 0.5s ease-out;
+    
+                        &:hover {
+                            background-color: rgba(0,31,63, 0.5);
+                        }
+                    }
+                }
+
+                .buttonContainer {
+                    display: block;
+                    margin: 0px auto;
+                    width: 90%;
+                    transform: translateY(100px);
+
+                    button {
+                        display: block;
+                        margin: 0px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    @include baseStyle.for-size(mobile) {
+        padding: 20px;
+        .logoImg > .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .sidebar-Menu-Container {
+            font-size: 25px;
+            .menu-Btn {
+                width: 80px;
+                height: 80px;
+            }
+            .buttonContainer {
+                button {
+                    padding: 20px 40px;
+                    font-size: 20px;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+    @include baseStyle.for-size(tablet) {
+        padding: 15px 30px;
+
+        .logoImg > .logo {
+            width: 60px;
+            height: 60px;
+        }
+        .sidebar-Menu-Container {
+            font-size: 25px;
+            .menu-Btn {
+                width: 80px;
+                height: 80px;
+            }
+            .buttonContainer {
+                button {
+                    padding: 20px 40px;
+                    font-size: 20px;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+}
