@@ -5,11 +5,11 @@ import { MdLocationPin } from "react-icons/md";
 import Button from "../Utility/Button/Button";
 import Slideshow from "./Slideshow";
 
-const ProductDetails = ({product}) => {
+const ProductDetails = ({product, onWhatsappClick}) => {
     const [readMore, setReadMore] = useState(false);
     const {id, title, images, ...others} = product;
     const onClickBtn = () => {
-
+        onWhatsappClick('product');
     }
 
     // const slideshow = images.map((item, index) => {

@@ -7,10 +7,10 @@ import './Services.scss'
 
 Header
 
-const Services = ({products}) => {
+const Services = ({products, onWhatsappClick}) => {
     return (
         <div>
-            <Header />
+            <Header onWhatsappClick={onWhatsappClick}/>
             {/* <ProductsSection products={products} /> */}
             <div className="services">
             <h2>Our Services</h2>

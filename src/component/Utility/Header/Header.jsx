@@ -5,9 +5,10 @@ import Button from '../Button/Button';
 import NavSection from '../NavSection/NavSection';
 import SidebarMenu from './SidebarMenu';
 import { useState } from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 // import logo from './image/favicon/logo.png';
 
-const Header = () => {
+const Header = ({onWhatsappClick}) => {
     const [activeNavLinkId, setActiveNavLinkId] = useState(0);
     //Navigation Content List
     const navContent = [
@@ -36,7 +37,7 @@ const Header = () => {
 
     //Funtion for Button
     const onClickBtn = () => {
-        console.log('clicked button');
+        onWhatsappClick('contact');
     }
 
     const isPhoneOnly = useMediaQuery({
@@ -48,12 +49,12 @@ const Header = () => {
 
     return (
         <header id="header">
-                <a href="/home">
+                <Link to="/">
                     <div className="logoImg">
                         <img className='logo' src="/image/logo/logo-pic.png" alt="Logo for header" />
                         <h1>GSP</h1>
                     </div>
-                </a>
+                </Link>
             <div className='navContainer'>
                  {isPhoneOnly && <SidebarMenu navContent={navContent} onClickBtn={onClickBtn} />} 
                  {isDesktop && <NavSection navContent={navContent} />}

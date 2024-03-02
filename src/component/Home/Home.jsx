@@ -8,10 +8,10 @@ import ProductsSection from '../Utility/Products-Section/Products-Section';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 
-const Home = ({products}) => {
+const Home = ({products, onWhatsappClick}) => {
     return (
         <div>
-            <Header />
+            <Header onWhatsappClick={onWhatsappClick}/>
             <Hero 
             mainText={"Looking For A Place To Call A Home ?"} 
             subText={'Discover Exceptional Properties Here...'}

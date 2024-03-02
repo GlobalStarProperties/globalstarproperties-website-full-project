@@ -5,10 +5,10 @@ import ProductsSection from "../Utility/Products-Section/Products-Section";
 import AboutDetails from "./AboutDetails";
 import './About.scss'
 
-const About = ({products}) => {
+const About = ({products, onWhatsappClick}) => {
     return (
         <div className="about-page">
-            <Header/>
+            <Header onWhatsappClick={onWhatsappClick}/>
             <Hero 
             mainText={"WHAT WE DO FOR YOU"} 
             // subText={'Discover Exceptional Properties Here...'}

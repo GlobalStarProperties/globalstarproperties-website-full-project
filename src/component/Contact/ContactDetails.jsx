@@ -3,7 +3,11 @@ import { FaAddressCard, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Button from '../Utility/Button/Button';
 
-const ContactDetails = () => {
+const ContactDetails = ({onWhatsappClick}) => {
+  const onClickBtn = () => {
+    onWhatsappClick('contact');
+  }
+
   return (
     <section className="contact-section">
       <div className="container">
@@ -21,7 +25,7 @@ const ContactDetails = () => {
              className="whatsapp-btn"
              target="_blank" 
              rel="noopener noreferrer">
-                <Button text={'Contact us on WhatsApp'} icon={<FaWhatsapp />} iconColor={'green'} />
+                <Button text={'Contact us on WhatsApp'} icon={<FaWhatsapp />} iconColor={'green'} onClick={onClickBtn}/>
           </Link>
         </div>
       </div>

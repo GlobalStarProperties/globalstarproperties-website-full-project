@@ -4,12 +4,12 @@ import Hero from "../Utility/Hero/Hero";
 import ContactDetails from "./ContactDetails";
 import './Contact.scss';
 
-const Contact = () => {
+const Contact = ({onWhatsappClick}) => {
     return (
         <div className="contact-page">
-            <Header />
+            <Header onWhatsappClick={onWhatsappClick}/>
             <Hero mainText={'Contact Us'}/>
-            <ContactDetails />
+            <ContactDetails onWhatsappClick={onWhatsappClick}/>
             <Footer/>
         </div>
     );
